@@ -1,0 +1,41 @@
+// Different from root tsconfig/json, because Svelte needs different tsconfig settings
+/*{
+    "extends": "@tsconfig/svelte/tsconfig.json",
+    "compilerOptions": {
+        "strict": true,
+        "types": ["svelte"],
+        "baseUrl": "../..",
+        "rootDir": "../..",
+        "paths": {
+            "@core/*": ["./src/core/*"],
+            "@webviews/*": ["./src/webviews/*"],
+        },
+        "importsNotUsedAsValues": "remove",
+    },
+}*/
+{
+    "extends": "@tsconfig/svelte/tsconfig.json",
+    "include": [
+        "./**/*",
+    ],
+    "exclude": [
+        "node_modules/*",
+    ],
+    "compilerOptions": {
+        "strict": true,
+		"rootDir": "../",
+        "baseUrl": "../",
+        "paths": {
+			"@core/*": [
+                "./core/*",
+            ],
+			"@webviews/*": [
+                "./webviews/*",
+            ],
+		},
+        "types": [
+            "node",
+            "svelte",
+        ],
+    }
+}
